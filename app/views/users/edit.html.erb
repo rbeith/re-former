@@ -1,0 +1,13 @@
+<h1>Edit User</h1>
+<h2>
+	<%= "Welcome, #{@user.username}" %>
+</h2>
+<%= form_with model: @user, method: :patch do |form| %>
+  <%= form.label :username, "Your Username Here:" %>
+	<%= form.text_field :username %><br>
+	<%= form.label :email, "Email:" %>
+	<%= form.email_field :email, placeholder: "you@mail.com" %><br>
+	<%= form.label :password, "Password:" %>
+	<%= form.password_field :password %><br>
+	<%= form.submit "Update" %>
+<% end %>
